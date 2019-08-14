@@ -1,15 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: go-calc-backend
+  name: go-calc
   labels:
     app: go-calc
-    tier: backend
   
 spec:
+  type: LoadBalancer
   ports:
   - port: 8080
     targetPort: 8080
   selector:
     app: go-calc
-    tier: backend
